@@ -34,7 +34,6 @@ corona_grouped <- corona_data %>%
 
 # plot
 corona_grouped %>%
-  # gather(key = "type", value = "number", -country) %>%
   ggplot(aes(x = country, y = infections, size = deaths, group = country)) +
     geom_point(color = "#EF5D60") +
     xlab("Country") + ylab("Infections") +
