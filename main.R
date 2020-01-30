@@ -38,4 +38,4 @@ corona_grouped %>%
     geom_point(color = "#EF5D60") +
     xlab("Country") + ylab("Infections") +
     theme_tufte() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
