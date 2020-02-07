@@ -30,7 +30,10 @@ corona_grouped <- corona_data %>%
   mutate(country = trimws(Country_Region)) %>%
   group_by(country) %>%
   summarise(infections = sum(as.numeric(Confirmed), na.rm = TRUE),
-            deaths = sum(as.numeric(Deaths), na.rm = TRUE))
+            deaths = sum(as.numeric(Deaths), na.rm = TRUE)) %>%
+  mutate(mortality_rate = deaths / infections)
+
+message("Overall mortality rate: ", round(100 * sum(corona_grouped$deaths) / sum(corona_grouped$infections), 2), "%")
 
 # plot
 corona_grouped %>%
