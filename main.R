@@ -37,8 +37,8 @@ message("Overall mortality rate: ", round(100 * sum(corona_grouped$deaths) / sum
 
 # plot
 corona_grouped %>%
-  ggplot(aes(x = country, y = infections, size = deaths, group = country)) +
+  ggplot(aes(x = country, y = log10(infections), size = deaths, group = country)) +
     geom_point(color = "#EF5D60") +
-    xlab("Country") + ylab("Infections") +
+    xlab("Country") + ylab("log10(Infections)") +
     theme_tufte() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
